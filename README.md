@@ -12,6 +12,8 @@ There are four types of users on this portal:
 	4). Admin
 
 The functionality of all these four agents are as follows:
+
+
 	1). Users: These are the people who sign up themselves on the portal and register for tests.
 			Users have the privilege of registering a nominee(a person who cannot register by himself but will be registerd by the user instead).
 			The user can book a test, register a nominee, update his own profile, view the tests he has registered for and also the the ones he registered in the past and their results have been declared.
