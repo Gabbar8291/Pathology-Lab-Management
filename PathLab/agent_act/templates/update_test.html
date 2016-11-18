@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE TESTS</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+</head>
+<body>
+
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br><br>
+
+<center><h2>UPDATE TEST</h2></center><br><br>
+<center>{{ERROR}}</center><br>
+
+<center>
+<form action='/agent/update_details/' method="POST">
+	{% csrf_token %}
+	<h4><p>TEST ID:<br></p></h4>
+	<select name='pat' style="width: 30%">
+		<option disabled> -Select</option>
+
+		{% for i in records %}
+			<option value={{ i.0 }} name="ltid">{{ i.0 }}</option>
+		{% endfor %}
+	</select><br><br>
+	<h4><p>SAMPLING:<br></p></h4>
+	<select name='sampling' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp1">NO</option>
+		<option value="YES" name="samp2">YES</option>
+	</select><br><br>
+	<h4><p>PACKED:<br></p></h4>
+	<select name='pack' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp3">NO</option>
+		<option value="YES" name="samp">YES</option>
+	</select><br><br>
+	<h4><p>SHIPPED:<br></p></h4>
+	<select name='ship' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp4">NO</option>
+		<option value="YES" name="samp5">YES</option>
+	</select><br><br>
+	<h4><p>REACHED DESTINATION:<br></p></h4>
+	<select name='dest' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp6">NO</option>
+		<option value="YES" name="samp7">YES</option>
+	</select><br><br>
+	<h4><p>TEST START:<br></p></h4>
+	<select name='teststr' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp8">NO</option>
+		<option value="YES" name="samp9">YES</option>
+	</select><br><br>
+	<h4><p>TEST COMPLETE:<br></p></h4>
+	<select name='testcomp' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp10">NO</option>
+		<option value="YES" name="samp11">YES</option>
+	</select><br><br>
+	<h4><p>REPORT GENERATION:<br></p></h4>
+	<select name='repgen' style="width: 30%">
+		<option disabled> -Select</option>
+		<option value="NO" name="samp12">NO</option>
+		<option value="YES" name="samp13">YES</option>
+	</select><br><br>
+	<h4><p>AMOUNT PAID:<br></p></h4>
+	<input type="text" name="paid"><br><br>
+	<input type="submit" name="submit" value="Update">
+</form>
+</center>
+<br><br>
+
+
+<center><a href="/agent/menu/" ><button class="button1">Go To Menu</button></a></center><br><br>
+<center><a href="/agent/sign_out/" ><button class="sign">Sign Out</button></a></center>
+
+
+
+
+</body>
+</html>

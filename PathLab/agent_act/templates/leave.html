@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Apply Leave</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+</head>
+<body>
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br>
+<center><h1>LEAVE APPLICATION</h1><br><br>
+<h3>LEAVE MUST BE WITHIN 15 DAY RANGE FROM TODAY</h3>
+</center>
+<br><br>
+<center>{{MSG}}</center>
+<center>
+<form action='/agent/validate/' method="POST">
+	{% csrf_token %}
+	<h4>Start Date: </h4>
+	<input type="date" min={{ min }} max={{ max }} name="start" placeholder="YYYY-MM-DD"><br><br>
+	<h4>End Date: </h4>
+	<input type="date" min={{ min }} max={{ max }} name="end" placeholder="YYYY-MM-DD"><br><br>
+	<input type="submit" name="submit" value="APPLY">
+</form>
+</center>
+<br><br>
+<center><a href="/agent/menu/" ><button class="button1">Go To Menu</button></a></center><br><br>
+<center><a href="/agent/sign_out/" ><button class="sign">Sign Out</button></a></center>
+</body>
+</html>

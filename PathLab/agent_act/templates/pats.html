@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPDATE TESTS</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+</head>
+<body>
+
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br><br>
+
+<center><h2>UPDATE TEST</h2></center><br><br>
+<center>{{ERROR}}</center><br>
+
+<center>
+<form action="/agent/display/" method="POST">
+	{% csrf_token %}
+	<h4><p>PATIENT ID:<br></p></h4>
+	<select name='pat' style="width: 30%">
+		<option disabled> -Select</option>
+
+		{% for i in records %}
+			<option value={{ i.0 }} name="ltid">{{ i.0 }}</option>
+		{% endfor %}
+	</select><br><br>
+	<input type="submit" name="submit" value="Details">
+
+</form>
+</center>
+<br><br>
+
+
+<center><a href="/agent/menu/" ><button class="button1">Go To Menu</button></a></center><br><br>
+<center><a href="/agent/sign_out/" ><button class="sign">Sign Out</button></a></center>
+
+</body>
+</html>

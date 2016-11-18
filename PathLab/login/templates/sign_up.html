@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+</head>
+<body>
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br>
+<center><h1>Sign Up Form</h1></center>
+<center>
+{{ERROR}}
+<br>
+<form action="/login/new_check/" method="POST">
+	{% csrf_token %}
+	ID:<br>
+	<input type="text" name="id" placeholder="ID" class="sform" id='IID'><br><br>
+	First Name:<br>
+	<input type="text" name="fname" placeholder="First Name" class="sform" id='fn'><br><br>
+	Last Name:<br>
+	<input type="text" name="lname" placeholder="Last Name"><br><br>
+	Date of Birth:<br>
+	<input type="text" name="dob" placeholder="YYYY-MM-DD" class="sform" id='db'><br><br>
+	Age:<br>
+	<input type="text" name="age" placeholder="Age"><br><br>
+	<input type="radio" name="gender" class="sbutton" value="Male"> Male <input type="radio" name="gender" class="sbutton" value="Female"> Female<br><br>
+	House No. : <input type="text" name="hno" class="sform" placeholder="House Number" id="hn"> Street : <input type="text" name="street" class="sform" placeholder="Street Name" id="st"><br><br>
+	Locality : <input type="text" name="local" class="sform" placeholder="Locality" id="lc"> Landmark : <input type="text" name="lmark" placeholder="Landmark"><br><br>
+	Address Line : <input type="text" name="addline" placeholder="Address Line"><br><br> City : <input type="text" name="city" class="sform" placeholder="City" id="ct"><br><br>
+	State : <input type="text" name="state" class="sform" placeholder="State" id="state"><br><br> PINCODE : <input type="text" name="pin" placeholder="pincode" ><br><br>
+	Phone Number:<br>
+	<input type="text" name="phno" placeholder="Phone Number" class="sform" id="ph"><br><br>
+	Email ID:<br>
+	<input type="email" name="eid" placeholder="Email ID" class="sform"><br><br>
+	Password:<br>
+	<input type="password" name="passwd" placeholder="Password" class="sform"><br><br>
+	Re-Password:<br>
+	<input type="password" name="repwd" placeholder="Re-Password" class="sform"><br>
+	<input type="submit" name="enter" placeholder="SUBMIT">
+</form>
+</center>
+<center>
+	<a href='/login/red_home/'><button class='button1'>GO HOME</button></a>
+</center>
+</body>
+</html>

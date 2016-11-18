@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+</head>
+<body>
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br>
+<center><h1>Login Form</h1></center>
+
+<center>
+{{ERROR}}
+<br>
+<form action="/login/login_auth/" method="POST">
+	{% csrf_token %}
+	<input type="text" name="id" placeholder="ID"><br><br>
+	<input type="text" name="emailid" placeholder="EMAIL ID"><br><br>
+	<input type="password" name="paswd" placeholder="Password" class="sudo"><br><br>
+	<input type="radio" name="role" value="user" class="sudo"> User
+	<input type="radio" name="role" value="nomi" class="sudo"> Nominee
+  	<input type="radio" name="role" value="agent" class="sudo"> Agent
+  	<input type="radio" name="role" value="admin" class="sudo"> Admin<br><br>
+  	<input type="submit" value='Log In'>
+</form>
+</center><br><br>
+<center><a href='/login/red_home/'><button class='button1'>GO HOME</button></a></center>
+</body>
+</html>
+
+<!--
+input[type=text] {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 3px;
+  margin-right: 10px;
+}
+	content: '';
+-->

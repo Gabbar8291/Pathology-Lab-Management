@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Home</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'user_home.css' %}" /></head>
+<body>
+<center><h1>Pathology Lab Management</h1></center>
+<center><div id="bar">
+<a href="/labs/"><button class="button"><h2>Labs</h2> </button></a>
+<a href="/centres/"><button class="button"><h2>Centres</h2></button></a>
+<a href="/testnames/"><button class="button"><h2>Tests</h2></button></a>
+<a href="/agentinfo/"><button class="button"><h2>Agents</h2> </button></a>
+<a href="/contact/"><button class="button"><h2>Contact</h2> </button></a>
+</div>
+</center>
+<br><br>
+<center>{{ERROR}}</center>
+<br><br>
+<center><h1>Admin Home</h1></center>
+<br><br>
+<center>
+<a href="/admin_act/reg/"><button class="button2"><span>Register Agent </span></button></a><br>
+
+<a href="/admin_act/agv/"><button class="button2"><span>View Agent </span></button></a><br>
+
+<a href="/admin_act/rmag/"><button class="button2"><span>Remove Agent </span></button></a><br>
+
+<a href="/admin_act/update/"><button class="button2"><span>Update Agent Profile </span></button></a><br>
+
+<a href="/admin_act/sanction/"><button class="button2"><span>Sanction Leave</span></button></a><br>
+
+<a href="/admin_act/viewleaves/"><button class="button2"><span>View Leaves </span></button></a>
+</center>
+<br><br><br><br>
+<center><a href="/admin_act/sign_out/" ><button class="sign">{{text}}(SIGN OUT)</button></a></center>
+
+
+
+</body>
+</html>
